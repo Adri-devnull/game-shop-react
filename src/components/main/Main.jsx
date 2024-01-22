@@ -26,7 +26,11 @@ const Main = () => {
 				gamesList={filteredGames}
 				action={game => addGameToCart(cart, setCart, game)}
 			/>
-			<Cart cart={cart} setCart={setCart} action={deleteGameCart} />
+			<Cart
+				cart={cart}
+				setCart={setCart}
+				action={() => deleteGameCart(cart, setCart)}
+			/>
 		</StyledMain>
 	);
 };
@@ -61,6 +65,6 @@ const addGameToCart = (cart, setCart, game) => {
 	setCart(updatedGamesCart);
 };
 
-const deleteGameCart = (cart, setCart, game) => {};
+const deleteGameCart = (cart, setCart) => {};
 
 export default Main;
